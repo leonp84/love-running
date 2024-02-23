@@ -130,10 +130,10 @@ footer {
     }
 }
 
-/*  media query for tablets */
+/*  media query for large devices */
 
 @media screen and (min-width: 992px){
-    a:hover {
+    #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
