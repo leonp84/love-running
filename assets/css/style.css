@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200..700&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
@@ -14,19 +15,21 @@ body {
     flex-direction: column;
     /* Generic project styles */
     color: #3a3a3a;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: "Oswald", sans-serif;
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgb(46, 43, 43);
+    color: #252525;
 }
 
 /* Header */
 header {
-    background-color: white;
+    background-color: #ffffff;
     padding: 0 1rem;
     position: fixed;
     z-index: 99;
@@ -48,7 +51,7 @@ header a {
     list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -56,29 +59,29 @@ header a {
     border-bottom: 1px solid #3a3a3a;
 }
 
-/* Navbar style */
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
-    background: white;
+    background-color: #ffffff;
     width: 100%;
-    left: 0px;
+    left: 0;
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     top: 100%;
 }
 
-/* Nav Toggle */
+/* Nav toggle */
 #nav-toggle:checked~nav {
-    display: block;  
-}
-
-.nav-toggle-label {
-    font-size: 2rem;
+    display: block;
 }
 
 #nav-toggle {
     display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
 }
 
 /* Main content */
@@ -88,55 +91,75 @@ main {
     margin-top: 47px;
 }
 
-/* Hero Section */
-
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
-    background: url('../images/hero-image.webp') no-repeat center center/cover;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
     position: relative;
 }
 
 #cover-text {
-    /* rgba value to make cover text background semi-transparent */
+    /* Final rgba value sets the opacity so it is semi-transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
     bottom: 30px;
     width: 80%;
     min-height: 200px;
-    padding-top:40px;
-    padding-left:10px;
+    padding-top: 40px;
+    padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
-    color: white;
+#cover-text>h2,
+#cover-text>h3 {
+    color: #ffffff;
 }
 
-#reasons-section h2 {
-    font-size: 300%;
+/* Reasons section */
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons h2 {
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 280%;
 }
 
-.reasons-box {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
+    margin-bottom: 20px;
 }
 
-.reasons-box h3 {
-    padding-bottom: 4px;
-    border-bottom: 2px solid darkgrey;
-    padding-left: 12px;
-
+#benefits p {
+    padding: 0 20px;
 }
 
-.reasons-box p {
-    padding: 10px 20px;
-    margin-bottom: 10px;
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
 
+/* Reasons Image */
+
+#circle-cover-bg {
+    background: url("../images/reasons-image.webp")  no-repeat top center /cover;
+    height: 90vw;
+    width: 90vw;
+    border: 2px solid red;
+    margin-bottom: 20px;
+    /* Circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#benefits-image {
+    display: flex;
+    justify-content: center;
 }
 
 /* Footer */
@@ -151,12 +174,13 @@ main {
 #social-networks i {
     font-size: 160%;
     padding: 5%;
-    color: #3a3a3a
+    color: #3a3a3a;
 }
 
-/*  media query for tablets */
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
 
-@media screen and (min-width: 768px){
+    /* Header */
     nav {
         display: block;
         position: relative;
@@ -169,7 +193,7 @@ main {
         display: flex;
     }
 
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
 
@@ -183,21 +207,21 @@ main {
         margin: 0 0.5rem;
     }
 
+    /* Main content */
     main {
-        /* Push margin down for larger screens */
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
 
+    /* Hero */
     #cover-text {
         width: 300px;
         right: 50px;
-
     }
 }
 
-/*  media query for large devices */
-
-@media screen and (min-width: 992px){
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
